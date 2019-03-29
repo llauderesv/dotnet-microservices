@@ -10,10 +10,13 @@ namespace myMicroservices.Controllers {
     public class ValuesController : ControllerBase {
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get () {
-            return new string[] {
-                "Learn Microservices",
-                "Integration with Docker"
+        public ActionResult<IEnumerable<Person>> Get () {
+            var person = new Person ("Test Person", 10);
+            var person2 = new Person ("Test Person 2", 10);
+
+            return new List<Person> {
+                person,
+                person2
             };
         }
 
